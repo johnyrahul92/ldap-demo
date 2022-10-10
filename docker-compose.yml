@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  ldap:
+    hostname: ldap-01.domain.com
+    build: .
+    ports:
+      - "1389:1389"
+      - "1636:1636"
+      - "4444:4444"
+    container_name: ldap-rahul
+   
+  

@@ -1,0 +1,182 @@
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:01.982
+dn: dc=springframework,dc=org
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: springframework
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:01.992
+dn: ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.002
+dn: ou=subgroups,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: subgroups
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.012
+dn: ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.020
+dn: ou=space cadets,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: space cadets
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.053
+dn: ou=\"quoted people\",dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: "quoted people"
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.059
+dn: ou=otherpeople,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: otherpeople
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.076
+dn: uid=ben,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Ben Alex
+sn: Alex
+uid: ben
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.086
+dn: uid=bob,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Bob Hamilton
+sn: Hamilton
+uid: bob
+userPassword: bobspassword
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.095
+dn: uid=joe,ou=otherpeople,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Joe Smeth
+sn: Smeth
+uid: joe
+userPassword: joespassword
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.105
+dn: cn=mouse\, jerry,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Mouse, Jerry
+sn: Mouse
+uid: jerry
+userPassword: jerryspassword
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.114
+dn: cn=slash/guy,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: slash/guy
+sn: Slash
+uid: slashguy
+userPassword: slashguyspassword
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.125
+dn: cn=quote\"guy,ou=\"quoted people\",dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: quote\"guy
+sn: Quote
+uid: quoteguy
+userPassword: quoteguyspassword
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.134
+dn: uid=space cadet,ou=space cadets,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Space Cadet
+sn: Cadet
+uid: space cadet
+userPassword: spacecadetspassword
+
+
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.143
+dn: cn=developers,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: developers
+ou: developer
+uniqueMember: uid=ben,ou=people,dc=springframework,dc=org
+uniqueMember: uid=bob,ou=people,dc=springframework,dc=org
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.151
+dn: cn=managers,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: managers
+ou: manager
+uniqueMember: uid=ben,ou=people,dc=springframework,dc=org
+uniqueMember: cn=mouse\, jerry,ou=people,dc=springframework,dc=org
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:1389
+#!DATE 2022-09-28T09:56:02.160
+dn: cn=submanagers,ou=subgroups,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: submanagers
+ou: submanager
+uniqueMember: uid=ben,ou=people,dc=springframework,dc=org
